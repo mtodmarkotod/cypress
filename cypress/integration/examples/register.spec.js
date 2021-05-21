@@ -1,33 +1,29 @@
-describe('register', () => {
-    it('visit gallery app', () => {
+const locators = require ("../../fixtures/lokators.json");
+const faker = require ("faker");
+
+let userData = {
+    randomName: faker.name.firstName(),
+    randomLastName: faker.name.lastName(),
+    randomEmail: faker.internet.email(),
+    randomPassword: faker.internet.password()
+}
+
+describe('register', () => {  
+
+    beforeEach(() => {
         cy.visit('');
-    })
+        cy.get(locators.navigation.loginBtn).eq(0).click();
+    })    
 
-    it('click register btn', () => {
-        cy.get(':nth-child(2) > .nav-link').eq(0).click();
-    })
-    it('enter name', () => {
-        cy.get('#first-name').type('Marko');
+   it('register', () => {
+    cy.get(locators.registerPage.registerBtn).eq(0).click();
+    cy.get(locators.registerPage.firstName).type(userData.randomName);    
+    cy.get(locators.registerPage.lastName).type(userData.randomLastName);        
+    cy.get(locators.registerPage.email).type(userData.randomEmail);       
+    cy.get(locators.registerPage.password).type(userData.randomPassword);       
+    cy.get(locators.registerPage.confPassword).type(userData.randomPassword);       
+    cy.get(locators.registerPage.checkbox).check();       
+    cy.get(locators.registerPage.submitBtn).click();
+   })       
         
-    })
-    it('enter last name', () => {
-        cy.get('#last-name').type('Todorovic');      
-    })
-    it('enter password', () => {
-        cy.get('#email').type('masdas@gmail.com');       
-    })
-    it('enter password', () => {
-        cy.get('#password').type('Markomarko1234');       
-    })
-    it('confirm password', () => {
-        cy.get('#password-confirmation').type('Markomarko1234');       
-    })
-    it('click on checkbox', () => {
-        cy.get('[class="form-check-input"]').check();       
-    })
-    it('submit form', () => {
-        cy.get('button[type="submit"]').click();       
-    })
-
-
 })
