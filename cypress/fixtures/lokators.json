@@ -1,21 +1,31 @@
 {
-    "navigation": {
-        "loginBtn": "a[class='nav-link nav-buttons']",
-        "logOutBtn": ".ml-auto > :nth-child(3) > .nav-link"
-    },
-    "loginPage" : {
-        "email": "input[id='email']",
-        "password": "input[id='password']",
-        "submitBtn": "button[type='submit']"
-    },
-    "registerPage": {
-        "registerBtn": ":nth-child(2) > .nav-link",
-        "firstName": "#first-name",
-        "lastName": "#last-name",
-        "email": "#email",
-        "password": "#password",
-        "confPassword": "#password-confirmation",
-        "checkbox": "[class='form-check-input']",
-        "submitBtn": "button[type='submit']"
-    }
+  "navigation": {
+    "loginBtn": "a[href='/login']",
+    "registerBtn": "a[href='/register']",
+    "logOutBtn": ".ml-auto > :nth-child(3) > .nav-link"
+  },
+  "loginPage": {
+    "email": "input[id='email']",
+    "password": "input[id='password']",
+    "submitBtn": "button[type='submit']"
+  },
+  "registerPage": {
+    "firstName": "#first-name",
+    "lastName": "#last-name",
+    "email": "#email",
+    "password": "#password",
+    "confPassword": "#password-confirmation",
+    "checkbox": "[class='form-check-input']",
+    "submitBtn": "button[type='submit']"
+  },
+  "createGalleryPage": {
+    "title": "#title",
+    "description": "#description",
+    "img": ".input-group > .form-control",
+    "submitBtn": "form > :nth-child(4)"
+  },
+  "msg": {
+    "alertEmail": ":nth-child(3) > .alert",
+    "alertPassword": ".alert"
+  }
 }
