@@ -3,6 +3,7 @@
     "loginBtn": "a[href='/login']",
     "registerBtn": "a[href='/register']",
     "logOutBtn": ".ml-auto > :nth-child(3) > .nav-link"
+  
   },
   "loginPage": {
     "email": "input[id='email']",
